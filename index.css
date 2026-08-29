@@ -1,0 +1,75 @@
+#parent{
+    margin-left: 30px;
+}
+#div1{
+   display: flex;
+}
+#html{
+    background-color: #CBD5E1;
+    border: 1px;
+    border-radius: 15px;
+    /* padding: 0px 30px; */
+     padding: 4px 20px 6px 20px;
+    margin-left: 30px;
+}
+#css{
+background-color: #CBD5E1;
+    border: 1px;
+    border-radius: 15px;
+   /* padding: 0px 30px; */
+     padding: 4px 20px 6px 20px;
+    margin-left: 40px;
+}
+#js{
+background-color: #CBD5E1;
+    border: 1px;
+    border-radius: 15px;
+    /* padding-top: 3px; */
+    /* padding: 0px 10px; */
+  padding: 4px 20px 6px 20px;
+    margin-left: 40px;
+    text-align: center;
+}
+#phyton{
+background-color: #CBD5E1;
+    border: 1px;
+    border-radius: 15px;
+    /* padding: 0px 30px; */
+       padding: 4px 20px 6px 20px;
+    margin-left: 40px;
+}
+#dj{
+background-color: #CBD5E1;
+    border: 1px;
+    border-radius: 15px;
+   /* padding: 0px 30px; */
+    padding: 4px 20px 6px 20px;
+    margin-left: 40px;
+}
+#git{
+background-color: #CBD5E1;
+    border: 1px;
+    border-radius: 10px;
+    /* padding: 5px 5px 5px 5px; */
+  padding: 4px 20px 6px 20px;
+    margin-left: 40px;
+}
+#res{
+background-color: #CBD5E1;
+    border: 1px;
+    border-radius: 15px;
+/* padding: 0px 30px; */
+  padding: 4px 20px 6px 20px;
+    margin-left: 40px;
+}
+#fig{
+background-color: #CBD5E1;
+    border: 1px;
+    border-radius: 15px;
+    /* padding: 0px 30px; */
+  padding: 4px 20px 6px 20px;
+    margin-left: 40px;
+}
+#cards{
+    display: flex;
+}
