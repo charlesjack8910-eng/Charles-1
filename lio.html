@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles Jack · Contact</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f7fb;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1.5rem;
+      line-height: 1.5;
+      color: #1e293b;
+    }
+
+    /* ----- card container (same as profile) ----- */
+    .contact-card {
+      max-width: 720px;
+      width: 100%;
+      background: white;
+      border-radius: 2rem;
+      padding: 2.5rem 2.2rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+    }
+
+    /* ----- header / avatar row (consistent) ----- */
+    .contact-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .avatar-frame {
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e9edf2;
+      box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title-group h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b1e33;
+      margin-bottom: 0.2rem;
+    }
+
+    .title-group .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #eef2f6;
+      padding: 0.3rem 1rem 0.3rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1e3a5f;
+    }
+
+    .title-group .badge i {
+      color: #2a6b9e;
+      font-size: 0.9rem;
+    }
+
+    /* ----- section styling (same as profile) ----- */
+    .section {
+      margin-top: 2rem;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0b1e33;
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid #eef2f6;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title i {
+      color: #2a6b9e;
+      width: 1.6rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    /* ----- contact details (info rows) ----- */
+    .contact-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-top: 0.2rem;
+    }
+
+    .contact-info-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #f9fbfd;
+      padding: 0.7rem 1.2rem;
+      border-radius: 1.2rem;
+      border: 1px solid #eef2f6;
+      transition: background 0.15s;
+    }
+
+    .contact-info-list li i {
+      color: #2a6b9e;
+      font-size: 1.2rem;
+      width: 1.8rem;
+      text-align: center;
+    }
+
+    .contact-info-list li .info-label {
+      font-weight: 500;
+      color: #1e3a5f;
+      min-width: 80px;
+    }
+
+    .contact-info-list li .info-value {
+      color: #1e293b;
+      word-break: break-word;
+    }
+
+    .contact-info-list li .info-value a {
+      color: #1e3a5f;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .contact-info-list li .info-value a:hover {
+      border-bottom-color: #2a6b9e;
+      color: #0b2b4a;
+    }
+
+    /* ----- social links (grid) ----- */
+    .social-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      margin-top: 0.2rem;
+      list-style: none;
+    }
+
+    .social-grid li a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      border: 1px solid #dce3ec;
+      padding: 0.4rem 1.4rem 0.4rem 1rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 500;
+      color: #1e3a5f;
+      font-size: 0.95rem;
+      transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .social-grid li a i {
+      color: #2a6b9e;
+      font-size: 1rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    .social-grid li a:hover {
+      background: #f0f4fa;
+      border-color: #b0c7df;
+      box-shadow: 0 4px 8px -4px rgba(0, 20, 40, 0.08);
+    }
+
+    /* ----- back link (button style) ----- */
+    .back-link-wrap {
+      margin-top: 2.2rem;
+      border-top: 1px solid #eef2f6;
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #0b1e33;
+      color: white;
+      padding: 0.6rem 1.8rem 0.6rem 1.6rem;
+      border-radius: 60px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      box-shadow: 0 6px 12px -6px rgba(0, 20, 40, 0.2);
+    }
+
+    .back-btn i {
+      font-size: 0.9rem;
+    }
+
+    .back-btn:hover {
+      background: #143458;
+      transform: scale(1.01);
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width: 480px) {
+      .contact-card {
+        padding: 1.8rem 1.2rem;
+      }
+      .contact-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .avatar-frame {
+        width: 80px;
+        height: 80px;
+      }
+      .title-group h1 {
+        font-size: 1.8rem;
+      }
+      .contact-info-list li {
+        flex-wrap: wrap;
+        gap: 0.3rem 0.8rem;
+      }
+      .contact-info-list li .info-label {
+        min-width: 70px;
+      }
+      .social-grid {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .social-grid li a {
+        justify-content: center;
+      }
+    }
+
+    /* extra polish */
+    ul {
+      padding-left: 0;
+    }
+
+    .section + .section {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-card">
+    
+    <!-- header: avatar + name + role (consistent with profile) -->
+    <div class="contact-header">
+      <div class="avatar-frame">
+        <!-- using the same image as profile (HAPPY NEW MONTH FLYER.jpg) 
+             you can replace with a different image if needed -->
+        <img src="Screenshot 2026-08-08 112036-Photoroom.png" alt="Charles Jack" loading="lazy">
+      </div>
+      <div class="title-group">
+        <h1>Charles Jack</h1>
+        <span class="badge">
+          <i class="fas fa-address-book"></i> Contact · Graphic Designer
+        </span>
+      </div>
+    </div>
+
+    <!-- contact details -->
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-paper-plane"></i>
+        <span>Get in touch</span>
+      </div>
+      <ul class="contact-info-list">
+        <li>
+          <i class="fas fa-envelope"></i>
+          <span class="info-label">Email</span>
+          <span class="info-value">
+            <a href="mailto:charlesjack8910@gmail.c0m">charlesjack8910@gmail.c0m</a>
+          </span>
+        </li>
+        <li>
+          <i class="fas fa-phone-alt"></i>
+          <span class="info-label">Phone</span>
+          <span class="info-value">+234 812 345 6789</span>
+        </li>
+        <li>
+          <i class="fas fa-map-pin"></i>
+          <span class="info-label">Location</span>
+          <span class="info-value">Rivers, Nigeria</span>
+        </li>
+        <li>
+          <i class="fas fa-globe"></i>
+          <span class="info-label">Website</span>
+          <span class="info-value">
+            <a href="#" target="_blank">charlesjack.design</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- social links -->
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-share-alt"></i>
+        <span>Social</span>
+      </div>
+      <ul class="social-grid">
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i> Twitter</a></li>
+        <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+        <li><a href="#" aria-label="Behance"><i class="fab fa-behance"></i> Behance</a></li>
+        <li><a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i> Dribbble</a></li>
+      </ul>
+    </div>
+
+    <!-- back to profile link (styled as button) -->
+    <div class="back-link-wrap">
+      <a href="#" class="back-btn" onclick="history.back(); return false;">
+        <i class="fas fa-arrow-left"></i> Back to profile
+      </a>
+      <!-- fallback: if history.back() fails, we also provide a real link -->
+      <a href="portfoloi.html" class="back-btn" style="margin-left: 0.8rem; background: #2a4b6e;" target="_blank">
+        <i class="fas fa-briefcase"></i> Portfolio
+      </a>
+    </div>
+
+    <!-- subtle footer -->
+    <div style="margin-top: 1.8rem; font-size: 0.7rem; color: #94a9c2; text-align: right; border-top: 1px solid #eef2f6; padding-top: 1rem; display: flex; justify-content: flex-end; gap: 0.4rem;">
+      <i class="fas fa-comment-dots" style="color: #b6c9dd;"></i>
+      <span>Charles Jack · let's connect</span>
+    </div>
+  </div>
+</body>
+</html>
