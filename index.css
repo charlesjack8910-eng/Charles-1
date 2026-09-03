@@ -12,6 +12,19 @@
     padding: 0 15px;
 }
 
+/* FIX: Better font rendering and sizing for mobile */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
 #div2 {
     display: flex;
     flex-wrap: wrap;
@@ -139,6 +152,11 @@
         margin: 0 auto;
     }
 
+    /* FIX: Better font sizes for tablets */
+    body {
+        font-size: 15px;
+    }
+
     #div2 {
         gap: 8px;
         justify-content: center;
@@ -201,8 +219,21 @@
     }
 }
 
-/* Small phones (321px - 480px) */
+/* Small phones (321px - 480px) - MAIN FIX FOR BLURRY TEXT */
 @media screen and (min-width: 321px) and (max-width: 480px) {
+    /* FIX: Better text rendering and sizing for small phones */
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    body {
+        font-size: 16px !important;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
     #parent {
         padding: 0 15px;
         margin: 0 auto;
@@ -224,8 +255,8 @@
     #git,
     #res,
     #fig {
-        font-size: 11px;
-        padding: 4px 12px;
+        font-size: 13px !important;
+        padding: 6px 14px;
         border-radius: 8px;
         white-space: nowrap;
         flex: 0 1 auto;
@@ -253,34 +284,47 @@
         margin: 0;
     }
 
-    /* Full width buttons on small phones */
+    /* FIX: Better button sizing and touch targets */
     .btn-lg {
         display: block;
         width: 100%;
         margin: 8px 0;
-        padding: 12px 20px;
-        font-size: 16px;
+        padding: 14px 20px;
+        font-size: 17px !important;
+        min-height: 50px;
+        border-radius: 8px;
     }
 
-    /* Smaller headings */
+    /* FIX: Clear, readable headings on mobile */
     h1 {
-        font-size: 28px;
+        font-size: 32px !important;
         margin-bottom: 10px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
     }
 
     h2 {
-        font-size: 22px;
+        font-size: 26px !important;
         margin-top: 20px;
         margin-bottom: 10px;
+        font-weight: 600;
     }
 
     h3 {
-        font-size: 16px;
+        font-size: 20px !important;
+        font-weight: 500;
     }
 
+    /* FIX: Better paragraph readability */
     p {
-        font-size: 14px;
-        line-height: 1.5;
+        font-size: 16px !important;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    /* FIX: Better text for contact info */
+    #parent strong {
+        font-size: 16px;
     }
 
     /* Fix form on small phones */
@@ -292,13 +336,25 @@
         margin-bottom: 12px !important;
     }
 
-    /* Make br tags less spaced */
-    br {
-        display: none;
+    /* FIX: Better form inputs */
+    .form-control {
+        font-size: 16px !important;
+        padding: 12px 15px;
+        min-height: 48px;
     }
 
-    /* Add spacing instead of br tags */
-    #parent > br {
+    textarea.form-control {
+        font-size: 16px !important;
+        min-height: 100px;
+    }
+
+    .form-label {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    /* Hide excessive br tags but keep spacing */
+    br {
         display: none;
     }
 
@@ -311,10 +367,30 @@
         display: inline-block;
         margin-top: 5px;
     }
+
+    /* FIX: Better card text */
+    .card-title, .card-text, .card h5 {
+        font-size: 16px !important;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
 }
 
 /* Very small phones (up to 320px) */
 @media screen and (max-width: 320px) {
+    /* FIX: Even smaller screens */
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    body {
+        font-size: 15px !important;
+        -webkit-font-smoothing: antialiased;
+    }
+
     #parent {
         padding: 0 10px;
         margin: 0 auto;
@@ -333,8 +409,8 @@
     #git,
     #res,
     #fig {
-        font-size: 9px;
-        padding: 3px 8px;
+        font-size: 11px !important;
+        padding: 4px 10px;
         border-radius: 6px;
         white-space: nowrap;
     }
@@ -352,41 +428,46 @@
         display: block;
         width: 100%;
         margin: 6px 0;
-        padding: 10px 15px;
-        font-size: 14px;
+        padding: 12px 15px;
+        font-size: 16px !important;
+        min-height: 44px;
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 26px !important;
     }
 
     h2 {
-        font-size: 18px;
+        font-size: 22px !important;
     }
 
     h3 {
-        font-size: 14px;
+        font-size: 17px !important;
     }
 
     p {
-        font-size: 12px;
-        line-height: 1.4;
+        font-size: 15px !important;
+        line-height: 1.5;
     }
 
     /* Fix form inputs */
     .form-control {
-        font-size: 14px;
-        padding: 8px 10px;
+        font-size: 15px !important;
+        padding: 10px 12px;
+        min-height: 44px;
     }
 
     textarea.form-control {
-        font-size: 14px;
+        font-size: 15px !important;
+        min-height: 80px;
     }
 
     /* Fix button in form */
     .btn-primary {
         width: 100%;
-        padding: 10px;
+        padding: 12px;
+        font-size: 16px !important;
+        min-height: 48px;
     }
 }
 
@@ -418,8 +499,8 @@
     #git,
     #res,
     #fig {
-        font-size: 10px;
-        padding: 3px 10px;
+        font-size: 11px;
+        padding: 3px 12px;
     }
 
     #cards .card {
@@ -431,21 +512,21 @@
     }
 
     .btn-lg {
-        padding: 8px 15px;
-        font-size: 14px;
+        padding: 10px 18px;
+        font-size: 15px;
         display: inline-block;
         width: auto;
+        min-height: 44px;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
     h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
-    /* Reduce spacing in landscape */
     br {
         display: none;
     }
