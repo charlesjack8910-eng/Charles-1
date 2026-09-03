@@ -1,78 +1,525 @@
-#parent{
+/* Base styles - works on all devices */
+* {
+    box-sizing: border-box;
+}
+
+#parent {
     margin-left: 30px;
+    margin-right: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
 }
-#div2{
-   display: flex;
-}
-#html{
-    background-color: #CBD5E1;
-    border: 1px;
-    border-radius: 15px;
-    /* padding: 0px 30px; */
-     padding: 4px 20px 6px 20px;
-    margin-left: 30px;
-}
-#css{
-background-color: #CBD5E1;
-    border: 1px;
-    border-radius: 15px;
-   /* padding: 0px 30px; */
-     padding: 4px 20px 6px 20px;
-    margin-left: 40px;
-}
-#js{
-background-color: #CBD5E1;
-    border: 1px;
-    border-radius: 15px;
-    /* padding-top: 3px; */
-    /* padding: 0px 10px; */
-  padding: 4px 20px 6px 20px;
-    margin-left: 40px;
-    text-align: center;
-}
-#phyton{
-background-color: #CBD5E1;
-    border: 1px;
-    border-radius: 15px;
-    /* padding: 0px 30px; */
-       padding: 4px 20px 6px 20px;
-    margin-left: 40px;
-}
-#dj{
-background-color: #CBD5E1;
-    border: 1px;
-    border-radius: 15px;
-   /* padding: 0px 30px; */
-    padding: 4px 20px 6px 20px;
-    margin-left: 40px;
-}
-#git{
-background-color: #CBD5E1;
-    border: 1px;
-    border-radius: 10px;
-    /* padding: 5px 5px 5px 5px; */
-  padding: 4px 20px 6px 20px;
-    margin-left: 40px;
-}
-#res{
-background-color: #CBD5E1;
-    border: 1px;
-    border-radius: 15px;
-/* padding: 0px 30px; */
-  padding: 4px 20px 6px 20px;
-    margin-left: 40px;
-}
-#fig{
-background-color: #CBD5E1;
-    border: 1px;
-    border-radius: 15px;
-    /* padding: 0px 30px; */
-  padding: 4px 20px 6px 20px;
-    margin-left: 40px;
-}
-#cards{
+
+#div2 {
     display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 0 10px;
 }
-#div1{
-margin-left: 110px;
+
+#html,
+#css,
+#js,
+#phyton,
+#dj,
+#git,
+#res,
+#fig {
+    background-color: #CBD5E1;
+    border: 1px solid #b0bec5;
+    border-radius: 15px;
+    padding: 6px 24px;
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+#html { margin-left: 0; }
+#css { margin-left: 0; }
+#js { margin-left: 0; text-align: center; }
+#phyton { margin-left: 0; }
+#dj { margin-left: 0; }
+#git { margin-left: 0; border-radius: 15px; }
+#res { margin-left: 0; }
+#fig { margin-left: 0; }
+
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+#div1 {
+    margin-left: 0;
+    padding: 0 10px;
+}
+
+#cards .card {
+    width: 18rem !important;
+    margin: 0 !important;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease;
+}
+
+#cards .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Fix form on all devices */
+.col-lg-6 {
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* Fix buttons on mobile */
+.btn-lg {
+    margin: 5px;
+}
+
+/* Fix text spacing */
+#parent h1, #parent h2, #parent h3, #parent p {
+    padding: 0 5px;
+}
+
+/* ============================================= */
+/* RESPONSIVE MEDIA QUERIES - OPTIMIZED FOR ALL DEVICES */
+/* ============================================= */
+
+/* Large tablets and small laptops (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #parent {
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    #div2 {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    #html,
+    #css,
+    #js,
+    #phyton,
+    #dj,
+    #git,
+    #res,
+    #fig {
+        font-size: 13px;
+        padding: 5px 18px;
+        border-radius: 12px;
+    }
+
+    #cards .card {
+        width: 15rem !important;
+        flex: 0 0 auto;
+    }
+
+    #cards .card img {
+        height: 170px;
+    }
+
+    #div1 {
+        padding: 0 5px;
+    }
+}
+
+/* Tablets and large phones (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #parent {
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    #div2 {
+        gap: 8px;
+        justify-content: center;
+        padding: 0 5px;
+    }
+
+    #html,
+    #css,
+    #js,
+    #phyton,
+    #dj,
+    #git,
+    #res,
+    #fig {
+        font-size: 12px;
+        padding: 5px 15px;
+        border-radius: 10px;
+        white-space: nowrap;
+    }
+
+    #cards {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #cards .card {
+        width: 45% !important;
+        min-width: 200px;
+        max-width: 280px;
+        flex: 0 1 auto;
+    }
+
+    #cards .card img {
+        height: 150px;
+    }
+
+    #div1 {
+        padding: 0;
+    }
+
+    /* Make buttons stack on tablets */
+    .btn-lg {
+        display: inline-block;
+        width: auto;
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+
+/* Small phones (321px - 480px) */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    #parent {
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+    #div2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    #html,
+    #css,
+    #js,
+    #phyton,
+    #dj,
+    #git,
+    #res,
+    #fig {
+        font-size: 11px;
+        padding: 4px 12px;
+        border-radius: 8px;
+        white-space: nowrap;
+        flex: 0 1 auto;
+    }
+
+    #cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 5px 0;
+    }
+
+    #cards .card {
+        width: 100% !important;
+        max-width: 350px !important;
+        flex: 0 1 auto;
+    }
+
+    #cards .card img {
+        height: 180px;
+    }
+
+    #div1 {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Full width buttons on small phones */
+    .btn-lg {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    /* Smaller headings */
+    h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Fix form on small phones */
+    .col-lg-6 {
+        padding: 0 5px;
+    }
+
+    .mb-3 {
+        margin-bottom: 12px !important;
+    }
+
+    /* Make br tags less spaced */
+    br {
+        display: none;
+    }
+
+    /* Add spacing instead of br tags */
+    #parent > br {
+        display: none;
+    }
+
+    #parent > * {
+        margin-bottom: 5px;
+    }
+
+    /* Fix contact section */
+    #parent > strong {
+        display: inline-block;
+        margin-top: 5px;
+    }
+}
+
+/* Very small phones (up to 320px) */
+@media screen and (max-width: 320px) {
+    #parent {
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+
+    #div2 {
+        gap: 4px;
+        justify-content: center;
+    }
+
+    #html,
+    #css,
+    #js,
+    #phyton,
+    #dj,
+    #git,
+    #res,
+    #fig {
+        font-size: 9px;
+        padding: 3px 8px;
+        border-radius: 6px;
+        white-space: nowrap;
+    }
+
+    #cards .card {
+        width: 100% !important;
+        max-width: 280px !important;
+    }
+
+    #cards .card img {
+        height: 140px;
+    }
+
+    .btn-lg {
+        display: block;
+        width: 100%;
+        margin: 6px 0;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    /* Fix form inputs */
+    .form-control {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    textarea.form-control {
+        font-size: 14px;
+    }
+
+    /* Fix button in form */
+    .btn-primary {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* iPhone specific fixes (notch and home indicator) */
+@supports (padding: max(0px)) {
+    #parent {
+        padding-left: max(15px, env(safe-area-inset-left));
+        padding-right: max(15px, env(safe-area-inset-right));
+        padding-top: max(0px, env(safe-area-inset-top));
+        padding-bottom: max(0px, env(safe-area-inset-bottom));
+    }
+}
+
+/* Landscape mode for phones */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    #parent {
+        padding: 0 20px;
+    }
+
+    #div2 {
+        gap: 5px;
+    }
+
+    #html,
+    #css,
+    #js,
+    #phyton,
+    #dj,
+    #git,
+    #res,
+    #fig {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+
+    #cards .card {
+        width: 200px !important;
+    }
+
+    #cards .card img {
+        height: 120px;
+    }
+
+    .btn-lg {
+        padding: 8px 15px;
+        font-size: 14px;
+        display: inline-block;
+        width: auto;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    /* Reduce spacing in landscape */
+    br {
+        display: none;
+    }
+}
+
+/* Dark mode support (optional but good for eyes) */
+@media (prefers-color-scheme: dark) {
+    #html,
+    #css,
+    #js,
+    #phyton,
+    #dj,
+    #git,
+    #res,
+    #fig {
+        background-color: #2d3748;
+        color: #e2e8f0;
+        border-color: #4a5568;
+    }
+
+    #parent {
+        color: #e2e8f0;
+    }
+
+    .card {
+        background-color: #2d3748 !important;
+        color: #e2e8f0 !important;
+    }
+
+    .card-body {
+        background-color: #2d3748;
+    }
+
+    .card-text {
+        color: #a0aec0 !important;
+    }
+
+    .form-control {
+        background-color: #2d3748;
+        color: #e2e8f0;
+        border-color: #4a5568;
+    }
+
+    .form-label {
+        color: #e2e8f0;
+    }
+}
+
+/* Print styles (optional) */
+@media print {
+    #parent {
+        margin: 0;
+        padding: 20px;
+    }
+
+    .btn-lg,
+    .btn-primary {
+        display: none;
+    }
+
+    #div2 {
+        gap: 10px;
+    }
+
+    #html,
+    #css,
+    #js,
+    #phyton,
+    #dj,
+    #git,
+    #res,
+    #fig {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+    }
 }
